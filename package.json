@@ -6,7 +6,7 @@
   "repository": "https://github.com/declann/calculang-example-repl-repo.git",
   "author": "Declan Naughton working for DCN Consulting",
   "scripts": {
-    "build": "cul-js compile ./src/revenue-with-demand-curve.cul.js"
+    "build": "cul-js compile ./src/bounce.cul.js"
   },
   "dependencies": {
     "@calculang/calculang-js": "^0.1.0-alpha.3"
