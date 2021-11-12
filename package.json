@@ -9,6 +9,8 @@
     "build": "cul-js compile ./src/bounce.cul.js"
   },
   "dependencies": {
-    "@calculang/calculang-js": "^0.1.0-alpha.3"
+    "@calculang/calculang-js": "^0.1.0-alpha.3",
+    "lru-memoize": "^1.1.0",
+    "underscore": "^1.13.1"
   }
 }
