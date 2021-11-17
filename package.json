@@ -6,10 +6,11 @@
   "repository": "https://github.com/declann/calculang-example-repl-repo.git",
   "author": "Declan Naughton working for DCN Consulting",
   "scripts": {
-    "build": "cul-js compile ./src/bounce.cul.js"
+    "build": "cul-js compile ./src/bounce.cul.js",
+    "introspect": "cul-js introspect ./src/bounce.cul.js > ./src/bounce-introspection.json"
   },
   "dependencies": {
-    "@calculang/calculang-js": "^0.1.0-alpha.3",
+    "@calculang/calculang-js": "^0.1.0-alpha.4",
     "lru-memoize": "^1.1.0",
     "underscore": "^1.13.1"
   }

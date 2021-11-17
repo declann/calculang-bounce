@@ -28,6 +28,8 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Introspection
+        run: npm run introspect
       - name: Commit & Push changes
         uses: actions-js/push@master
         with:
