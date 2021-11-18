@@ -4710,7 +4710,7 @@ const x = ({
 }) => {
   if (t({
     t_in
-  }) == 0) return 0;else return x({
+  }) == 0) return 100;else return x({
     dx_in,
     t_in: t({
       t_in
@@ -4725,15 +4725,8 @@ const y_ = ({
 }) => {
   if (t({
     t_in
-  }) == 0) return 50;else if (y({
-    dampener_in,
-    t_in: t({
-      t_in
-    }) - 1
-  }) + dy({
-    t_in,
-    dampener_in
-  }) > 185) return 190; // cap re-map
+  }) == 0) return 50; //else if (y({ t_in: t() - 1 }) + dy() > 185) return 190;
+  // cap re-map
   else return y({
     dampener_in,
     t_in: t({
