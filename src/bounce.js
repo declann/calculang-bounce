@@ -4727,9 +4727,17 @@ const y_ = ({
 }) => {
   if (t({
     t_in
-  }) == 0) return 50; //else if (y({ t_in: t() - 1 }) + dy() > 185) return 190;
-  // cap re-map
-  else return y({
+  }) == 0) return 50;else if (y({
+    dampener_in,
+    t_in: t({
+      t_in
+    }) - 1
+  }) + dy({
+    dampener_in,
+    t_in: t({
+      t_in
+    }) - 1
+  }) > 185) return 190;else return y({
     dampener_in,
     t_in: t({
       t_in
@@ -4778,7 +4786,7 @@ const t = ({
 }) => t_in;
 const dx = ({
   dx_in
-}) => dx_in; /////// gen stuff
+}) => dx_in; /////// gen stuff, not used::
 
 const t_domain = ({
   t_domain_in
@@ -4868,7 +4876,7 @@ const gen2 = ({
   });
   return result;
 }; /////////////////////////////////////////////////////
-// memo stuff:
+// memo stuff: (redundant with memo-loader, calculang issue #1)
 /////////////////////////////////////////////////////
 
 const y_m = Object(lru_memoize__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(999999, underscore__WEBPACK_IMPORTED_MODULE_1__[/* isEqual */ "a"])(y_); // not a fn, so nothing happens in cul logic
