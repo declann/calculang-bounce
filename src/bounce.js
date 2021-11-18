@@ -4710,7 +4710,9 @@ const x = ({
 }) => {
   if (t({
     t_in
-  }) == 0) return 100;else return x({
+  }) == 0) return 100 + dx({
+    dx_in
+  });else return x({
     dx_in,
     t_in: t({
       t_in
