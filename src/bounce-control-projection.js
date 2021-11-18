@@ -31,7 +31,7 @@ for (var i = 0; i < limit; i++) {
   y += dy;
   if (y > 185) {
     dy = -dy;
-    y = 190; // (from below)
+    y = 190; // (from ellipse command hardcode) bug (in control projection): 190 is not the y which should be used for the next round of calcs
     //ellipse(x, 190, 36, 25);
   } else {
     dy = dy * 0.98 + 3;
