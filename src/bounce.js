@@ -4735,8 +4735,10 @@ const y_ = ({
       t_in
     }) - 1
   }) + dy({
-    t_in,
-    dampener_in
+    dampener_in,
+    t_in: t({
+      t_in
+    }) - 1
   });
 };
 const dy_ = ({
@@ -4745,19 +4747,14 @@ const dy_ = ({
 }) => {
   if (t({
     t_in
-  }) == 0) return 0;else if (y({
-    dampener_in,
-    t_in: t({
-      t_in
-    }) - 1
-  }) + dy({
-    dampener_in,
-    t_in: t({
-      t_in
-    }) - 1
-  }) * dampener({
+  }) == 0) return 0 * dampener({
     dampener_in
-  }) + 3 > 185) return -dy({
+  }) + 3;else if (y({
+    dampener_in,
+    t_in: t({
+      t_in
+    })
+  }) > 185) return -dy({
     dampener_in,
     t_in: t({
       t_in
