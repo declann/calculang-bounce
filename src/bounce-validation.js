@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 19);
+/******/ 	return __webpack_require__(__webpack_require__.s = 18);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -570,6 +570,58 @@ function filter(obj, predicate, context) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dampener", function() { return dampener; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dx", function() { return dx; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "impact_x", function() { return impact_x; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "impact_y", function() { return impact_y; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "impact_dy", function() { return impact_dy; });
+/* harmony import */ var _bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "x", function() { return _bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__["c"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "y", function() { return _bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__["d"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "dy", function() { return _bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__["a"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "t", function() { return _bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__["b"]; });
+
+/* harmony import */ var _bounce_control_projection_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(49);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "control_projection", function() { return _bounce_control_projection_js__WEBPACK_IMPORTED_MODULE_1__["a"]; });
+
+
+
+
+ // for a look
+
+const dampener = ({}) => 0.98;
+const dx = ({}) => 4;
+const impact_x = ({
+  t_in
+}) => Object(_bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__[/* x */ "c"])({
+  t_in
+}) - _bounce_control_projection_js__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"][Object(_bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__[/* t */ "b"])({
+  t_in
+})].x;
+const impact_y = ({
+  t_in
+}) => Object(_bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__[/* y */ "d"])({
+  t_in
+}) - _bounce_control_projection_js__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"][Object(_bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__[/* t */ "b"])({
+  t_in
+})].y;
+const impact_dy = ({
+  t_in
+}) => Object(_bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__[/* dy */ "a"])({
+  t_in
+}) - _bounce_control_projection_js__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"][Object(_bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__[/* t */ "b"])({
+  t_in
+})].dy;
+
+/***/ }),
+/* 19 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return x; });
 /* unused harmony export y_ */
 /* unused harmony export dy_ */
@@ -585,7 +637,7 @@ function filter(obj, predicate, context) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return y; });
 /* unused harmony export dy_m */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return dy; });
-/* harmony import */ var _bounce_validation_cul_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
+/* harmony import */ var _bounce_validation_cul_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(18);
 /* harmony import */ var lru_memoize__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(96);
 /* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(97);
 
@@ -620,7 +672,9 @@ const y_ = ({
       t_in
     }) - 1
   }) + dy({
-    t_in
+    t_in: t({
+      t_in
+    }) - 1
   });
 };
 const dy_ = ({
@@ -628,7 +682,7 @@ const dy_ = ({
 }) => {
   if (t({
     t_in
-  }) == 0) return 0;else if (y({
+  }) == 0) return 0 * Object(_bounce_validation_cul_js__WEBPACK_IMPORTED_MODULE_0__["dampener"])({}) + 3;else if (y({
     t_in: t({
       t_in
     }) - 1
@@ -773,58 +827,6 @@ const dy = a => {
 y({ t_in: 1, dampener_in: 0.94 });
 */
 // TODO under robustness
-
-/***/ }),
-/* 19 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dampener", function() { return dampener; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dx", function() { return dx; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "impact_x", function() { return impact_x; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "impact_y", function() { return impact_y; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "impact_dy", function() { return impact_dy; });
-/* harmony import */ var _bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(18);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "x", function() { return _bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__["c"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "y", function() { return _bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__["d"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "dy", function() { return _bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__["a"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "t", function() { return _bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__["b"]; });
-
-/* harmony import */ var _bounce_control_projection_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(49);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "control_projection", function() { return _bounce_control_projection_js__WEBPACK_IMPORTED_MODULE_1__["a"]; });
-
-
-
-
- // for a look
-
-const dampener = ({}) => 0.98;
-const dx = ({}) => 4;
-const impact_x = ({
-  t_in
-}) => Object(_bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__[/* x */ "c"])({
-  t_in
-}) - _bounce_control_projection_js__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"][Object(_bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__[/* t */ "b"])({
-  t_in
-})].x;
-const impact_y = ({
-  t_in
-}) => Object(_bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__[/* y */ "d"])({
-  t_in
-}) - _bounce_control_projection_js__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"][Object(_bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__[/* t */ "b"])({
-  t_in
-})].y;
-const impact_dy = ({
-  t_in
-}) => Object(_bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__[/* dy */ "a"])({
-  t_in
-}) - _bounce_control_projection_js__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"][Object(_bounce_cul_js_cul_scope_id_1_cul_parent_scope_id_0__WEBPACK_IMPORTED_MODULE_0__[/* t */ "b"])({
-  t_in
-})].dy;
 
 /***/ }),
 /* 20 */

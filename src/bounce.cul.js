@@ -13,11 +13,11 @@ export const y_ = () => {
   if (t() == 0) return 50;
   //else if (y({ t_in: t() - 1 }) + dy() > 185) return 190;
   // cap re-map
-  else return y({ t_in: t() - 1 }) + dy();
+  else return y({ t_in: t() - 1 }) + dy({t_in: t() - 1});
 };
 
 export const dy_ = () => {
-  if (t() == 0) return 0;
+  if (t() == 0) return 0 * dampener() + 3;
   else if (y({ t_in: t() - 1 }) + dy({ t_in: t() - 1 }) * dampener() + 3 > 185)
     return -dy({ t_in: t() - 1 });
   else return dy({ t_in: t() - 1 }) * dampener() + 3;

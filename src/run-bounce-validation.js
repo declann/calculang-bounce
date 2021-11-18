@@ -7,4 +7,4 @@ var out = [...Array(100).keys()].map((t_in) => ({
   impact_dy: Math.round(m.impact_dy({ t_in: t_in })),
 }));
 
-console.log(JSON.stringify(out));
+console.log(JSON.stringify(out)); // anti-pattern!
