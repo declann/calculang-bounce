@@ -31,6 +31,7 @@ for (var i = 0; i < limit; i++) {
   y += dy;
   if (y > 185) {
     dy = -dy;
+    y = 190; // (from below)
     //ellipse(x, 190, 36, 25);
   } else {
     dy = dy * 0.98 + 3;

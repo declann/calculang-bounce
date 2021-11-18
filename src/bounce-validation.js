@@ -613,9 +613,15 @@ const y_ = ({
 }) => {
   if (t({
     t_in
-  }) == 0) return 50; //else if (y({ t_in: t() - 1 }) + dy() > 185) return 190;
-  // cap re-map
-  else return y({
+  }) == 0) return 50;else if (y({
+    t_in: t({
+      t_in
+    }) - 1
+  }) + dy({
+    t_in: t({
+      t_in
+    }) - 1
+  }) > 185) return 190;else return y({
     t_in: t({
       t_in
     }) - 1
@@ -654,7 +660,7 @@ const t = ({
 }) => t_in;
 const dx_ = ({
   dx_in
-}) => dx_in; /////// gen stuff
+}) => dx_in; /////// gen stuff, not used::
 
 const t_domain = ({
   t_domain_in
@@ -740,7 +746,7 @@ const gen2 = ({
   });
   return result;
 }; /////////////////////////////////////////////////////
-// memo stuff:
+// memo stuff: (redundant with memo-loader, calculang issue #1)
 /////////////////////////////////////////////////////
 
 const y_m = Object(lru_memoize__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(999999, underscore__WEBPACK_IMPORTED_MODULE_2__[/* isEqual */ "a"])(y_); // not a fn, so nothing happens in cul logic
@@ -2072,6 +2078,7 @@ for (var i = 0; i < limit; i++) {
   y += dy;
   if (y > 185) {
     dy = -dy;
+    y = 190; // (from below)
     //ellipse(x, 190, 36, 25);
   } else {
     dy = dy * 0.98 + 3;

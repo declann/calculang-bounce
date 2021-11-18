@@ -11,8 +11,7 @@ export const x = () => {
 
 export const y_ = () => {
   if (t() == 0) return 50;
-  //else if (y({ t_in: t() - 1 }) + dy() > 185) return 190;
-  // cap re-map
+  else if (y({ t_in: t() - 1 }) + dy({ t_in: t() - 1 }) > 185) return 190;
   else return y({ t_in: t() - 1 }) + dy({ t_in: t() - 1 });
 };
 
@@ -27,7 +26,7 @@ export const dampener = () => dampener_in;
 export const t = () => t_in;
 export const dx = () => dx_in;
 
-/////// gen stuff
+/////// gen stuff, not used::
 
 export const t_domain = () => t_domain_in;
 export const dampener_domain = () => dampener_domain_in;
@@ -83,7 +82,7 @@ export const gen2 = () => {
 };
 
 /////////////////////////////////////////////////////
-// memo stuff:
+// memo stuff: (redundant with memo-loader, calculang issue #1)
 /////////////////////////////////////////////////////
 
 export const y_m = memoize(999999, isEqual)(y_); // not a fn, so nothing happens in cul logic
