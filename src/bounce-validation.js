@@ -572,6 +572,7 @@ function filter(obj, predicate, context) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return x; });
 /* unused harmony export y_ */
+/* unused harmony export compressed */
 /* unused harmony export dy_ */
 /* unused harmony export dampener_ */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return t; });
@@ -630,7 +631,13 @@ const y_ = ({
       t_in
     }) - 1
   });
-};
+}; // ball gets compressed on the ground before bouncing upwards
+
+const compressed = ({
+  t_in
+}) => y({
+  t_in
+}) == 190 ? true : false;
 const dy_ = ({
   t_in
 }) => {
@@ -806,7 +813,8 @@ __webpack_require__.r(__webpack_exports__);
 
  // for a look
 
-const dampener = ({}) => 0.98;
+const dampener = ({}) => 0.5; // set to 0.5 to expose bug //0.98;
+
 const dx = ({}) => 4;
 const impact_x = ({
   t_in
@@ -2078,7 +2086,7 @@ for (var i = 0; i < limit; i++) {
   y += dy;
   if (y > 185) {
     dy = -dy;
-    y = 190; // (from below)
+    y = 190; // (from ellipse command hardcode) bug (in control projection): 190 is not the y which should be used for the next round of calcs
     //ellipse(x, 190, 36, 25);
   } else {
     dy = dy * 0.98 + 3;
