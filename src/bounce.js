@@ -4685,6 +4685,7 @@ function keyInObj(value, key, obj) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return x; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y_", function() { return y_; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "compressed", function() { return compressed; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dy_", function() { return dy_; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dampener", function() { return dampener; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return t; });
@@ -4748,7 +4749,15 @@ const y_ = ({
       t_in
     }) - 1
   });
-};
+}; // ball gets compressed on the ground before bouncing upwards
+
+const compressed = ({
+  t_in,
+  dampener_in
+}) => y({
+  t_in,
+  dampener_in
+}) == 190 ? true : false;
 const dy_ = ({
   t_in,
   dampener_in
