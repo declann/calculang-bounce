@@ -5,7 +5,7 @@ import memoize from 'lru-memoize';
 import { isEqual } from 'underscore';
 
 export const x = () => {
-  if (t() == 0) return 100;
+  if (t() == 0) return 100 + dx();
   else return x({ t_in: t() - 1 }) + dx();
 };
 
@@ -27,7 +27,6 @@ export const dy_ = () => {
 export const dampener = () => dampener_in;
 export const t = () => t_in;
 export const dx = () => dx_in;
-
 
 /////// gen stuff
 
@@ -84,9 +83,6 @@ export const gen2 = () => {
   return result;
 };
 
-
-
-
 /////////////////////////////////////////////////////
 // memo stuff:
 /////////////////////////////////////////////////////
@@ -102,8 +98,6 @@ export const dy = (a) => {
   return dy_m(a);
   dy_(); // never run
 };
-
-
 
 // needs a cache even for y({t_in:14}) amazing!
 // but further needs y = 0... then return t_in

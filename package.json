@@ -7,6 +7,8 @@
   "author": "Declan Naughton working for DCN Consulting",
   "scripts": {
     "build": "cul-js compile ./src/bounce.cul.js",
+    "build:validation": "cul-js compile ./src/bounce-validation.cul.js",
+    "run:validation": "node ./src/run-bounce-validation.js > ./src/run-bounce-validation.json",
     "introspect": "cul-js introspect ./src/bounce.cul.js > ./src/bounce-introspection.json"
   },
   "dependencies": {

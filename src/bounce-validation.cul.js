@@ -8,3 +8,5 @@ export const dampener = () => 0.98;
 export const dx = () => 4;
 
 export const impact_x = () => x() - control_projection[t()].x;
+export const impact_y = () => y() - control_projection[t()].y;
+export const impact_dy = () => dy() - control_projection[t()].dy;
