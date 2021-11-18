@@ -15,6 +15,9 @@ export const y_ = () => {
   else return y({ t_in: t() - 1 }) + dy({ t_in: t() - 1 });
 };
 
+// ball gets compressed on the ground before bouncing upwards
+export const compressed = () => (y() == 190 ? true : false);
+
 export const dy_ = () => {
   if (t() == 0) return 0 * dampener() + 3;
   else if (y({ t_in: t() }) > 185) return -dy({ t_in: t() - 1 });
