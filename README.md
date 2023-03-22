@@ -1,3 +1,9 @@
+# Update 21/3/23
+
+Moving the bounce example to use model with source/compilation in this location:
+
+https://github.com/declann/calculang-miscellaneous-models/tree/main/models/bounce
+
 # calculang-example-repl-repo
 
 There are many ways to execute the calculang compiler.
